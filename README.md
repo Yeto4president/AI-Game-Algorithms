@@ -18,26 +18,26 @@ Implementation of Minimax algorithm with Alpha-Beta pruning for two classic stra
 
 ### Game Specifics
 | Feature               | Tic-Tac-Toe       | Connect 4         |
-|-----------------------|-------------------|-------------------|
-| Board Size            | 3×3              | 6×12              |
-| Win Condition         | 3 in a row       | 4 in a row        |
-| Max Decision Time     | < 1s             | ≤ 9s              |
-| Search Depth          | 6 ply            | 3 ply             |
+|-----------------------|------------------|------------------|
+| Board Size            | 3×3              | 6×12             |
+| Win Condition         | 3 in a row       | 4 in a row       |
+| Max Decision Time     | < 1s             | ≤ 9s             |
+| Search Depth          | 6 ply            | 3 ply            |
 
 ### 🕹️ Game Controls
 
 ---
 
-**Démarrage rapide :**
-1. **Choix du premier joueur** - Humain ou IA au lancement
-2. **Saisie des mouvements** - Format simple selon le jeu
+**Quick Start:**
+1. **Choose first player** - Human or AI at launch
+2. **Enter moves** - Simple format depending on the game
 
-| Jeu | Format de saisie | Plage valide |
-|-----|------------------|-------------|
-| Tic-Tac-Toe | `ligne,colonne` | 0-2 |
-| Connect 4 | `colonne` | 0-11 |
+| Game | Input Format     | Valid Range |
+|------|-----------------|-------------|
+| Tic-Tac-Toe | `row,column` | 0-2 |
+| Connect 4   | `column`     | 0-11 |
 
-> 💡 *Exemple pour Tic-Tac-Toe : `1,2` pour la ligne 1, colonne 2*
+> 💡 *Example for Tic-Tac-Toe: `1,2` for row 1, column 2*
 
 ---
 
@@ -45,12 +45,12 @@ Implementation of Minimax algorithm with Alpha-Beta pruning for two classic stra
 
 <div align="center">
 
-| Métrique | Tic-Tac-Toe | Connect 4 |
-|----------|------------|----------|
-| **Taux de victoire** | 100% | ~85% |
-| **Temps de décision** | < 100ms | 5-8s |
-| **Profondeur de recherche** | 6 ply | 3 ply |
-| **État terminal** | 9 cases | 42 pions |
+| Metric | Tic-Tac-Toe | Connect 4 |
+|--------|------------|-----------|
+| **Win Rate** | 100% | ~85% |
+| **Decision Time** | < 100ms | 5-8s |
+| **Search Depth** | 6 ply | 3 ply |
+| **Terminal States** | 9 squares | 42 pieces |
 
 </div>
 
@@ -60,14 +60,14 @@ Implementation of Minimax algorithm with Alpha-Beta pruning for two classic stra
 
 #### 🔧 Key Functions
 ```python
-minimax_ab()          # Algorithme principal avec élagage
-evaluate_position()   # Évaluation heuristique
-Terminal_Test()       # Détection fin de partie
-get_valid_moves()     # Génération coups valides
+minimax_ab()          # Main algorithm with pruning
+evaluate_position()   # Heuristic evaluation
+Terminal_Test()       # End-of-game detection
+get_valid_moves()     # Generate valid moves
 Roadmap items
 ```
 ### ⚡ Connect 4 Optimizations
-- 🎯 Détection immediate - Victoire/défaite en 1 coup
-- 🎯 Bonus centre +3 points pour contrôle central
-- 🎯 Reconnaissance patterns - Détection des menaces
-- 🛡️ Pondération défensive ×1.2 pour les menaces adverses
+- 🎯 Immediate detection - Win/lose in 1 move
+- 🎯 Center bonus +3 points for central control
+- 🎯 Pattern recognition - Threat detection
+- 🛡️ Defensive weighting ×1.2 for opponent threats
